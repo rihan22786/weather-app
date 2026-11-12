@@ -1,0 +1,388 @@
+
+/* ==============================
+   WEATHER APP - COMPLETE CSS
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 30px 16px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #ffffff;
+    background:
+        radial-gradient(circle at top left, #234e83, transparent 40%),
+        linear-gradient(135deg, #071426, #102b4e, #10152f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-app {
+    width: 100%;
+    max-width: 780px;
+    padding: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+}
+
+.weather-app h1 {
+    text-align: center;
+    font-size: clamp(28px, 5vw, 40px);
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 0;
+    padding: 15px 17px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 14px;
+    outline: none;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.09);
+    font-size: 16px;
+}
+
+.search-box input::placeholder {
+    color: #b7c5d9;
+}
+
+.search-box input:focus {
+    border-color: #55c8ff;
+    box-shadow: 0 0 0 3px rgba(85, 200, 255, 0.15);
+}
+
+.search-box button,
+.unit-toggle {
+    border: none;
+    border-radius: 14px;
+    padding: 13px 20px;
+    color: #071426;
+    background: linear-gradient(135deg, #72e0ff, #8c9dff);
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.search-box button:hover,
+.unit-toggle:hover {
+    transform: translateY(-2px);
+}
+
+.search-box button:disabled {
+    cursor: wait;
+    opacity: 0.6;
+}
+
+.weather-card,
+.forecast-card {
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.weather-card {
+    padding: 26px 20px;
+    text-align: center;
+}
+
+.weather-card h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.weather-icon {
+    font-size: 68px;
+    margin: 10px 0;
+    animation: float 3s ease-in-out infinite;
+}
+
+.temperature {
+    font-size: clamp(42px, 8vw, 64px);
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+#weatherDescription {
+    margin: 8px 0 22px;
+    color: #c6d8f3;
+    font-size: 17px;
+    text-transform: capitalize;
+}
+
+.unit-toggle {
+    padding: 8px 14px;
+    margin: 0 0 22px;
+    font-size: 13px;
+}
+
+.weather-details {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.detail {
+    padding: 17px 8px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.07);
+    overflow-wrap: anywhere;
+}
+
+.detail span {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.detail p {
+    color: #b8c9df;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.detail strong {
+    font-size: 15px;
+}
+
+#weatherMessage {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 12px;
+    color: #d9f4ff;
+    background: rgba(85, 200, 255, 0.09);
+    line-height: 1.6;
+}
+
+#weatherStatus {
+    margin: 12px 0;
+    text-align: center;
+    color: #d9e8ff;
+    line-height: 1.5;
+}
+
+.forecast-section {
+    margin-top: 28px;
+}
+
+.forecast-section h2 {
+    font-size: 23px;
+    margin-bottom: 16px;
+}
+
+.forecast-container {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.forecast-card {
+    padding: 17px 8px;
+    text-align: center;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.forecast-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.13);
+}
+
+.forecast-card p {
+    font-size: 13px;
+    color: #c2d4ee;
+    margin-bottom: 13px;
+}
+
+.forecast-card span {
+    display: block;
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.forecast-card strong {
+    font-size: 14px;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 18px 10px;
+        align-items: flex-start;
+    }
+
+    .weather-app {
+        padding: 19px 13px;
+        border-radius: 22px;
+    }
+
+    .search-box {
+        gap: 7px;
+    }
+
+    .search-box input {
+        padding: 13px 10px;
+        font-size: 14px;
+    }
+
+    .search-box button {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .weather-details {
+        gap: 7px;
+    }
+
+    .detail {
+        padding: 13px 5px;
+    }
+
+    .detail p {
+        font-size: 11px;
+    }
+
+    .detail strong {
+        font-size: 13px;
+    }
+
+    .forecast-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .forecast-card:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* ==========================================
+   PREMIUM WEATHER APP - UI UPGRADE
+========================================== */
+
+/* 1. ANIMATED BACKGROUND */
+body {
+    background: linear-gradient(
+        -45deg,
+        #071426,
+        #102b4e,
+        #172554,
+        #241447,
+        #0b2940
+    );
+    background-size: 300% 300%;
+    animation: premiumBackground 16s ease infinite;
+}
+
+/* 2. premium glass app container */
+.weather-app {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.075);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    animation: appEntrance 0.8s ease both;
+}
+
+/* soft decorative glow */
+.weather-app::before {
+    content: "";
+    position: absolute;
+    top: -130px;
+    right: -100px;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: rgba(85, 200, 255, 0.12);
+    filter: blur(65px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* keep app content above decorative glow */
+.weather-app > * {
+    position: relative;
+}
+
+/* 3. Gardient title */
+.weather-app h1 {
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #78ddff,
+        #b8baff,
+        #ffffff
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleGlow 6s linear infinite;
+}
+
+/* 4. Premium search field */
+.search-box input {
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.search-box input:focus {
+    border-color: #72e0ff;
+    background: rgba(255, 255, 255, 0.13);
+    box-shadow:
+     0 0 0 3px rgba(85, 200, 255, 0.12),
+    0 0 0 22px rgba(85, 200, 255, 0.12);
+}
+
+.search-box button,
+.unit-toggle {
+    box-shadow: 0 5px 18px rgba(85, 200, 255, 0.13);
+    transition: transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.search-box button:hover,
+.unit-toggle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 25px rgba(85, 200, 255, 0.25);
+    filter: brightness(1.08);
+}
+
+.search-box button:active,
+.unit-toggle:active {
+    transform: scale(0.97);
+}
+
+/*5. premium current-weather card */
+
+

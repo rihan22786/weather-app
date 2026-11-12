@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather App</title>
+
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+
+    <!--WEATHER EFFECTS-->
+    <div id="weatherEffects" aria-hidden="true"></div>
+
+    <div class="weather-app">
+
+        <!-- APP TITLE -->
+        <h1>Weather App</h1>
+
+        <!-- SEARCH -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="cityInput"
+                placeholder="Enter city name"
+            >
+
+            <button id="searchBtn">
+                Search
+            </button>
+        </div>
+
+        <!-- WEATHER CARD -->
+        <div class="weather-card">
+
+            <h2 id="cityName">New Delhi</h2>
+
+            <div class="weather-icon" id="weatherIcon">
+                🌤️
+            </div>
+
+            <div class="temperature">
+                <span id="temperature">--</span>°C
+            </div>
+
+            <p id="weatherDescription">
+                Weather condition
+            </p>
+
+            <!-- WEATHER DETAILS -->
+            <div class="weather-details">
+
+                <div class="detail">
+                    <span>💧</span>
+                    <p>Humidity</p>
+                    <strong id="humidity">--%</strong>
+                </div>
+
+                <div class="detail">
+                    <span>💨</span>
+                    <p>Wind Speed</p>
+                    <strong id="windSpeed">-- km/h</strong>
+                </div>
+
+                <div class="detail">
+                    <span>🌡️</span>
+                    <p>Feels Like</p>
+                    <strong id="feelsLike">--°C</strong>
+                </div>
+
+            </div>
+
+
+        </div>
+
+<!--AIR QUALITY SECTION-->
+<section class="aqi-section">
+    <h2>🌿 Air Quality</h2>
+
+    <div class="aqi-card">
+        <div class="aqi-icon">🌬️</div>
+
+        <div class="aqi-info">
+            <p>Air Quality Index</p>
+            <h3 id="aqiValue">--</h3>
+            <span id="aqiStatus">Loading air quality...</span>
+        </div>
+    </div>
+</section>
+
+
+
+<!--HOURLY WEATHER FORECAST-->
+<section class="hourly-section">
+    <h2>⏰ Hourly Forecast</h2>
+    <p class="hourly-subtitle">Weather for the next few hours</p>
+
+    <div class="hourly-container" id="hourlyContainer"></div>
+    <!--Hourly forecast cards will apper here-->
+</section>
+
+
+
+
+     <!--5 DAY FORECAST-->    
+     <div class="forecast-section">
+        <h2>5-Day Forecast</h2>
+
+        <div class="forecast-container" id="forecastContainer">
+
+            <div class="forecast-card">
+                <p>Day</p>
+                <span>🌤️</span>
+                <strong> --°C</strong>
+            </div>
+
+            <div class="forecast-card">
+                <p>Day</p>
+                <span>☀️</span>
+                <strong>--°C</strong>
+            </div>
+
+            <div class="forecast-card">
+                <p>Day</p>
+                <span>☁️</span>
+                <strong>--°C</strong>
+            </div>
+            <div class="forecast-card">
+                <p>Day</p>
+                <span>🌧️</span>
+                <strong>--°C</strong>
+            </div>
+
+            <div class="forecast-card">
+                <p>Day</p> 
+                <span> 🌤️ </span>
+                 <strong> --°C </strong>
+            </div>
+        </div>
+     </div>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
